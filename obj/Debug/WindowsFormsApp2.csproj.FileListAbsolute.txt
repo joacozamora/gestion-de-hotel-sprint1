@@ -9,3 +9,14 @@ C:\Users\joaco\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsF
 C:\Users\joaco\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
 C:\Users\joaco\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\Users\joaco\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\joaco\OneDrive\Escritorio\VS2023\gestion-de-hotel-sprint1\obj\Debug\WindowsFormsApp2.csproj.AssemblyReference.cache
+C:\Users\joaco\OneDrive\Escritorio\VS2023\gestion-de-hotel-sprint1\obj\Debug\WindowsFormsApp2.csproj.SuggestedBindingRedirects.cache
+C:\Users\joaco\OneDrive\Escritorio\VS2023\gestion-de-hotel-sprint1\obj\Debug\WindowsFormsApp2.Form1.resources
+C:\Users\joaco\OneDrive\Escritorio\VS2023\gestion-de-hotel-sprint1\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\joaco\OneDrive\Escritorio\VS2023\gestion-de-hotel-sprint1\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+C:\Users\joaco\OneDrive\Escritorio\VS2023\gestion-de-hotel-sprint1\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+C:\Users\joaco\OneDrive\Escritorio\VS2023\gestion-de-hotel-sprint1\obj\Debug\WindowsFormsApp2.exe
+C:\Users\joaco\OneDrive\Escritorio\VS2023\gestion-de-hotel-sprint1\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\joaco\OneDrive\Escritorio\VS2023\gestion-de-hotel-sprint1\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\joaco\OneDrive\Escritorio\VS2023\gestion-de-hotel-sprint1\bin\Debug\WindowsFormsApp2.exe
+C:\Users\joaco\OneDrive\Escritorio\VS2023\gestion-de-hotel-sprint1\bin\Debug\WindowsFormsApp2.pdb

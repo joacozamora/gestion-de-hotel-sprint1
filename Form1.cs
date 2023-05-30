@@ -16,7 +16,8 @@ namespace WindowsFormsApp2
         public Form1()
         {
             InitializeComponent();
-            
+            textBox1.KeyPress += textBox1_KeyPress;
+
         }
 
         private void SubirPiso_Click(object sender, EventArgs e)
@@ -105,6 +106,16 @@ namespace WindowsFormsApp2
             }
             
             
+        }
+
+        
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
         }
     }
 }
