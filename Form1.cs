@@ -20,54 +20,72 @@ namespace WindowsFormsApp2
 
         }
 
+
+        private void CambiarColorControl(string controlName, Color color)
+        {
+            Control[] controls = this.Controls.Find(controlName, true);
+            if (controls.Length > 0)
+            {
+                if (controls[0] is Label label)
+                {
+                    label.BackColor = color;
+                }
+                else if (controls[0] is PictureBox picture)
+                {
+                    picture.BackColor = color;
+                }
+            }
+        }
+        
+        
+        private void Cambiarimagen(string pictureName, Image nuevaImagen)
+        {
+            Control[] controls = this.Controls.Find(pictureName, true);
+            if (controls.Length > 0 && controls[0] is PictureBox picture)
+            {
+                picture.Image = nuevaImagen;
+            }
+        }
+        private void CambiarNombreLabel(string labelName, string nuevoNombre)
+        {
+            Control[] controls = this.Controls.Find(labelName, true);
+            if (controls.Length > 0 && controls[0] is Label label)
+            {
+                label.Text = nuevoNombre;
+            }
+        }
+
+
         private void SubirPiso_Click(object sender, EventArgs e)
         {
-            string labelName = "lbl" + textBox1.Text;
-            string pictureName = "picture" + textBox1.Text;
-            Control[] controls = this.Controls.Find(labelName, true);
-            Control[] repair = this.Controls.Find(pictureName, true);
-            if (controls.Length > 0 || repair.Length > 0)
-            {
-                Label label = (Label)controls[0];
-                label.BackColor = Color.Gray;
-                PictureBox picture = (PictureBox)repair[0];
-                picture.BackColor = Color.Gray;
-                picture.Image = WindowsFormsApp2.Properties.Resources.spray1;
-            }
-            
+            CambiarColorControl("lbl" + textBox1.Text, Color.Gray);
+            CambiarColorControl("picture" + textBox1.Text, Color.Gray);
+            CambiarNombreLabel("lbl" + textBox1.Text, " ");
+            Cambiarimagen("picture" + textBox1.Text, WindowsFormsApp2.Properties.Resources.spray1);
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            string labelName = "lbl" + textBox1.Text;
-            string pictureName = "picture" + textBox1.Text;
-            Control[] controls = this.Controls.Find(labelName, true);
-            Control[] repair = this.Controls.Find(pictureName, true);
-            if (controls.Length > 0 || repair.Length > 0)
-            {
-                Label label = (Label)controls[0];
-                label.BackColor = Color.PaleGreen;
-                label.Text = "";
-                PictureBox picture = (PictureBox)repair[0];
-                picture.BackColor = Color.PaleGreen;
-                picture.Image = null;
-            }
+            CambiarColorControl("lbl" + textBox1.Text, Color.PaleGreen);
+            CambiarColorControl("picture" + textBox1.Text, Color.PaleGreen);
+            CambiarNombreLabel("lbl" + textBox1.Text, " ");
+            Cambiarimagen("picture" + textBox1.Text, null);
+            
 
         }
+
         private void CargarNombre_Click(object sender, EventArgs e)
         {
-            string labelName = "lbl" + textBox1.Text;
-            string pictureName = "picture" + textBox1.Text;
-            Control[] controls = this.Controls.Find(labelName, true);
-            Control[] repair = this.Controls.Find(pictureName, true);
-            if (controls.Length > 0 || repair.Length > 0)
+
+            CambiarColorControl("lbl" + textBox1.Text, Color.Orange);
+            CambiarColorControl("picture" + textBox1.Text, Color.Orange);
+            CambiarNombreLabel("lbl" + textBox1.Text, Nombre.Text);
+            Cambiarimagen("picture" + textBox1.Text, null);
+            
+            if (!ValidarNumero(textBox1.Text))
             {
-                Label label = (Label)controls[0];
-                label.BackColor = Color.Orange;
-                label.Text = Nombre.Text;
-                Nombre.Text = "";
-                PictureBox picture = (PictureBox)repair[0];
-                picture.BackColor = Color.Orange;
-                picture.Image = null;
+                
+                MessageBox.Show("Esa habitación no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
@@ -76,22 +94,7 @@ namespace WindowsFormsApp2
         {
 
         }
-        /*public int subodepiso(int subirpiso)
-        {
-            int tablapiso;
-            int numerodepiso = (int)numericUpDown1.Value;
-            if (subirpiso == 1)
-            {
-                tabControl1.SelectedIndex = 1;
-                tablapiso = tabControl1.SelectedIndex;
-            }
-            else
-            {
-                tabControl1.SelectedIndex = 2;
-                tablapiso = tabControl1.SelectedIndex;
-            }
-            return subirpiso;
-        }*/
+        
         public void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             int SubirPiso = Convert.ToInt32(numericUpDown1.Value);
@@ -116,6 +119,25 @@ namespace WindowsFormsApp2
             {
                 e.Handled = true;
             }
+        }
+
+        private void textBox_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private bool ValidarNumero(string texto)
+        {
+            int value;
+            if (int.TryParse(texto, out value))
+            {
+                
+                if ((value >= 101 && value <= 106) || (value >= 201 && value <= 206))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
